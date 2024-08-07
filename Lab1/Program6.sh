@@ -6,16 +6,22 @@ if [ $# -ne 3 ]; then
   exit 1
 fi
 
-# Assign arguments to variables
-filename=$1
-start_line=$2
-end_line=$3
+file1=$1
+file2=$2
+file3=$3
 
-# Check if the file exists
-if [ ! -f "$filename" ]; then
-  echo "File '$filename' does not exist."
-  exit 1
-fi
+op_file="concat.txt"
+sort_file="sorted.txt"
 
-# Display lines from start_line to end_line
-sed -n "${start_line},${end_line}p" "$filename"
+
+for file in "$file1" "$file2" "$file3" do 
+  if[!-f "$file"];then
+    echo"File '$file' does not exist"
+    exit 1
+  fi
+done
+cat "$file1""$file2""$file3">"$op_file"
+
+sort "$op_file">"$sorted_file"
+echo "Concatenation file created:$op_file"
+echo "Sorted file created:$sort_file"
