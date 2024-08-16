@@ -1,0 +1,17 @@
+Open System Call:
+To create a new file descriptor, you need to use the open system call.
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+int open(const char *path, int oflags);
+int open(const char *path, int oflags, mode_t mode);
+In simple terms, open establishes an access path to a file or device. If successful, it returns a file
+descriptor that can be used in read, write, and other system calls. The file descriptor is unique
+and isn’t shared by any other processes that may be running. If two programs have a file open at
+the same time, they maintain distinct file descriptors. If they both write to the file, they will
+continue to write where they left off. Their data isn’t interleaved, but one will overwrite the
+other. Each keeps its idea of how far into the file (the offset) it has read or written. You can
+prevent unwanted clashes of this sort by using file locking. The name of the file or device to be
+opened is passed as a parameter, path; the oflags parameter is used to specify actions to be
+taken on opening the file. The oflags are specified as a combination of a mandatory file access
+mode and other optional modes.
