@@ -1,0 +1,30 @@
+sample2.c  sample.c
+
+// Simple C program to display "Hello World"
+
+// Header file for input output functions
+#include <stdio.h>
+
+// Main function: entry point for execution
+int main() {
+
+    // writing print statement to print hello world
+    printf("Hello World");
+
+    return 0;
+}
+
+// C Program to Print
+// Integer value
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+	// Declaring integer
+	int x = 5;
+
+	// Printing values
+	printf("Printing Integer value %d", x);
+	return 0;
+}
