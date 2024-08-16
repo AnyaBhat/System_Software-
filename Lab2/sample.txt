@@ -1,0 +1,8 @@
+1. Write and Execute the following commands.
+Create a file called as sample.txt and enter some text and execute the command
+a) $wc < sample.txt
+b) $wc sample.txt > newfile
+$cat newfile
+c) $( ls -x *.c ; echo; cat *.c ) > c_progs_all.txt
+
+
