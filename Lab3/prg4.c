@@ -1,42 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BUFFER_SIZE 1 // We will read one character at a time
+int main(int argc, char *argv[]) {
+    FILE *sourceFile, *destFile;
+    int ch;
 
-void copy_file(const char *source_path, const char *dest_path) {
-    FILE *source_file = fopen(source_path, "r");
-    if (source_file == NULL) {
+    // Check for the correct number of arguments
+    if (argc != 3) {
+        printf("Usage: %s <source file> <destination file>\n", argv[0]);
+        return 1;
+    }
+
+    // Open the source file in read mode
+    sourceFile = fopen(argv[1], "r");
+    if (sourceFile == NULL) {
         perror("Error opening source file");
-        exit(EXIT_FAILURE);
+        return 1;
     }
 
-    FILE *dest_file = fopen(dest_path, "w");
-    if (dest_file == NULL) {
+    // Open the destination file in write mode
+    destFile = fopen(argv[2], "w");
+    if (destFile == NULL) {
         perror("Error opening destination file");
-        fclose(source_file);
-        exit(EXIT_FAILURE);
+        fclose(sourceFile);
+        return 1;
     }
 
-    int ch; // `int` is used to handle EOF properly
-
-    // Read character-by-character from source and write to destination
-    while ((ch = fgetc(source_file)) != EOF) {
-        fputc(ch, dest_file);
+    // Copy character by character from source to destination
+    while ((ch = fgetc(sourceFile)) != EOF) {
+        fputc(ch, destFile);
     }
 
     // Close the files
-    fclose(source_file);
-    fclose(dest_file);
+    fclose(sourceFile);
+    fclose(destFile);
+
+    printf("File copied successfully.\n");
+
+    return 0;
 }
-
-int main(int argc, char *argv[]) {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: %s <source_file> <dest_file>\n", argv[0]);
-        return EXIT_FAILURE;
-    }
-
-    copy_file(argv[1], argv[2]);
-
-    return EXIT_SUCCESS;
-}
-
