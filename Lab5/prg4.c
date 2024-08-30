@@ -23,3 +23,10 @@ int main() {
     return 0;
 }
 
+
+/*
+gcc prg4.c -o prg4.out
+chmod +x prg4.out
+./prg4.out [run in background]
+ ps aux | grep prg4.out
+ */
