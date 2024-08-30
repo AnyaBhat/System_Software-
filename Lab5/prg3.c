@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 
 void main(){
 	pid_t pid;
@@ -16,6 +17,7 @@ void main(){
 		printf("Parent PPID:%d\n",getppid());
 		exit(EXIT_SUCCESS);			
 	}else{
+		wait(NULL);  // child will go to zombie state if this is not present 
 		printf("Parent Process!!!\n");
 		printf("Parent PID:%d\n",getpid());
 		printf("Child PID:%d\n",pid);
