@@ -47,3 +47,11 @@ int main(){
    	free(seq);
     	return EXIT_SUCCESS;
 }
+/*
+$ gcc -o prg2.out prg2.c
+$ ./prg2.out
+Enter the length of the array:10
+Enter 10 elements:-1 -5 8 78 23 12 -6 8 -8 9
+Sum of negative numbers:
+-20 
+*/
