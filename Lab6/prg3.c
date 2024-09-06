@@ -65,3 +65,11 @@ int main(){
 	
     	return EXIT_SUCCESS;
 }
+/*
+$ ./prg3.out
+Enter the start number:5
+Enter the end number:10
+5 is a prime number.
+7 is a prime number.
+
+*/
