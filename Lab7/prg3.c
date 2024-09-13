@@ -101,3 +101,32 @@ int main() {
     return 0;
 }
 
+/*
+Enter the number of pages: 15
+Enter the number of frames: 4
+Enter the page reference string:
+7 0 1 2 0 3 0 4 2 3 0 3 2 3 4
+Page 7 fault
+Frames: [7*] [-1 ] [-1 ] [-1 ] 
+Page 0 fault
+Frames: [7*] [0*] [-1 ] [-1 ] 
+Page 1 fault
+Frames: [7*] [0*] [1*] [-1 ] 
+Page 2 fault
+Frames: [7*] [0*] [1*] [2*] 
+Page 0 hit
+Page 3 fault
+Frames: [3*] [0 ] [1 ] [2 ] 
+Page 0 hit
+Page 4 fault
+Frames: [3*] [0 ] [4*] [2 ] 
+Page 2 hit
+Page 3 hit
+Page 0 hit
+Page 3 hit
+Page 2 hit
+Page 3 hit
+Page 4 hit
+Total number of page faults: 6
+Hit ratio: 0.60
+*/
