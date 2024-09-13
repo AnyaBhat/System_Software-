@@ -148,3 +148,18 @@ int main() {
 
     return 0;
 }
+/*
+./prg1b.out
+Offset: 0, Size: 100, Allocated: 0
+Offset: 100, Size: 200, Allocated: 0
+Offset: 300, Size: 50, Allocated: 0
+Allocated 30 units of memory
+Offset: 0, Size: 30, Allocated: 1
+Offset: 30, Size: 70, Allocated: 0
+Offset: 100, Size: 200, Allocated: 0
+Offset: 300, Size: 50, Allocated: 0
+Freed memory
+Offset: 0, Size: 100, Allocated: 0
+Offset: 100, Size: 200, Allocated: 0
+Offset: 300, Size: 50, Allocated: 0
+*/
