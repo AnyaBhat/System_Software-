@@ -130,3 +130,26 @@ int main() {
     return 0;
 }
 
+/*
+./prg2.out
+Executing Q1 (RR5):
+Process 1 with burst time 10
+Executing Q2 (RR8):
+Process 1 with burst time 5
+Process 1 completed.
+Executing Q1 (RR5):
+Process 2 with burst time 15
+Executing Q2 (RR8):
+Process 2 with burst time 10
+Executing Q3 (FCFS):
+Process 2 with burst time 2
+Process 2 completed.
+Executing Q1 (RR5):
+Process 3 with burst time 20
+Executing Q2 (RR8):
+Process 3 with burst time 15
+Executing Q3 (FCFS):
+Process 3 with burst time 7
+Process 3 completed.
+*/
+
