@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int main() {
     FILE *fp;
@@ -32,9 +33,9 @@ int main() {
                 // Check if the name has a partition number
                 char *p = name;
                 while (*p) {
-                    if (*p >= '0' && *p <= '9') {
-                        instance = atoi(p); // Convert the number part to integer
-                        break; // Found the first digit, exit the loop
+                    // Check for the last digit in the name
+                    if (isdigit(*p)) {
+                        instance = *p - '0'; // Convert character to integer
                     }
                     p++;
                 }
@@ -61,12 +62,12 @@ sda        disk       0
 ├─sda1 part       1       
 ├─sda2 part       2       
 └─sda3 part       3       
-nvme0n1    disk       0       
-├─nvme0n1p1 part       0       
-├─nvme0n1p2 part       0       
-├─nvme0n1p3 part       0       
-├─nvme0n1p4 part       0       
-└─nvme0n1p5 part       0  
+nvme0n1    disk       1       
+├─nvme0n1p1 part       1       
+├─nvme0n1p2 part       2       
+├─nvme0n1p3 part       3       
+├─nvme0n1p4 part       4       
+└─nvme0n1p5 part       5   
 
 
 
