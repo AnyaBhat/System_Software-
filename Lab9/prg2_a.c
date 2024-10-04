@@ -1,43 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 
-struct DSA {
-    int request_id;
-    int arrival_time_stamp;
-    int cylinder;
-    int address;
-    int process_id;
-};
-
-void FCFS(struct DSA requests[], int n) {
-    printf("FCFS Scheduling:\n");
-    for (int i = 0; i < n; i++) {
-        printf("Request ID: %d, Cylinder: %d\n", requests[i].request_id, requests[i].cylinder);
-    }
-}
-
-void SSTF(struct DSA requests[], int n, int initial_position) {
-    bool served[n];
-    for (int i = 0; i < n; i++) served[i] = false;
-
-    printf("SSTF Scheduling:\n");
-    int current_position = initial_position;
-
-    for (int count = 0; count < n; count++) {
-        int closest_index = -1;
-        int closest_distance = __INT_MAX__;
-        for (int i = 0; i < n; i++) {
-            if (!served[i]) {
-                int distance = abs(requests[i].cylinder - current_position);
-                if (distance < closest_distance) {
-                    closest_distance = distance;
-                    closest_index = i;
-                }
-            }
-        }
-        served[closest_index] = true;
-        printf("Request ID: %d, Cylind#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
