@@ -1,3 +1,4 @@
+//This program is partially correct 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,3 +51,37 @@ int main() {
     return 0;
 }
 
+
+/*
+Output got
+ ./prg4.out
+--Connected Devices--
+Name       Type       Instance
+sda        disk       0       
+├─sda1 part       1       
+├─sda2 part       2       
+└─sda3 part       3       
+nvme0n1    disk       0       
+├─nvme0n1p1 part       0       
+├─nvme0n1p2 part       0       
+├─nvme0n1p3 part       0       
+├─nvme0n1p4 part       0       
+└─nvme0n1p5 part       0  
+
+
+
+Expected output 
+--Connected Devices--
+Name       Type       Instance
+sda        disk       0       
+├─sda1     part       1       
+├─sda2     part       2       
+└─sda3     part       3       
+nvme0n1    disk       0       
+├─nvme0n1p1 part       1       
+├─nvme0n1p2 part       2       
+├─nvme0n1p3 part       3       
+├─nvme0n1p4 part       4       
+└─nvme0n1p5 part       5       
+
+*/
